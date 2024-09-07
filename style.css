@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.images-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#original-container, #sketch-container {
+    flex: 1;
+    margin: 0 10px;
+}
+
+img {
+    width: 40%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Reusing the existing button style */
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* For anchor button */
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.download-container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* General styles remain unchanged */
+
+/* Media query for tablet screens (768px and below) */
+@media (max-width: 768px) {
+    .images-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #original-container, #sketch-container {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    img {
+        width: 80%; /* Increase image size for better visibility on smaller screens */
+    }
+}
+
+/* Media query for mobile screens (480px and below) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+        margin-top: 130px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+        margin-top: 10px;
+    }
+
+    .images-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #original-container, #sketch-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    img {
+        width: 100%; /* Full width for images on mobile */
+    }
+
+    .download-container {
+        text-align: center;
+        position: sticky; /* Make the button stick to the bottom if necessary */
+        bottom: 0;
+    }
+
+}

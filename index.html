@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Sketch Converter</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image to Sketch Converter</h1>
+        <form id="upload-form" enctype="multipart/form-data" method="POST" action="/upload">
+            <input type="file" id="imageUpload" name="image" accept="image/*" required />
+            <button type="submit" class="btn">Upload Image</button>
+        </form>
+
+        <!-- Display the original and sketch images side by side if available -->
+        {% if original_image and sketch_image %}
+        <div class="images-container">
+            <div id="original-container">
+                <h2>Original Image</h2>
+                <img id="originalImage" src="{{ url_for('uploaded_file', filename=original_image) }}" alt="Original Image">
+            </div>
+            <div id="sketch-container">
+                <h2>Sketch Image</h2>
+                <img id="sketchImage" src="{{ url_for('output_file', filename=sketch_image) }}" alt="Sketch Image">
+            </div>
+        </div>
+
+        <!-- Center the download button below the images -->
+        <div class="download-container">
+            <a href="{{ url_for('output_file', filename=sketch_image) }}" download class="btn">Download Sketch</a>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
